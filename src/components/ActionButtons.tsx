@@ -3,7 +3,12 @@ import React, { useRef } from 'react';
 import { heart, closeOutline } from 'ionicons/icons';
 import './ActionButtons.css'
 
-const ActionButtons: React.FC = () => {
+interface ContainerProps {
+    animatedUnmatchButton: boolean
+    animatedMatchButton: boolean
+}
+
+const ActionButtons: React.FC<ContainerProps> = (props) => {
 
     //Creating KeyFrames for animations
 
@@ -37,6 +42,8 @@ const ActionButtons: React.FC = () => {
                 duration={1000}
                 iterations={1}
                 keyframes={pulseKeyframes}
+                play={props.animatedUnmatchButton}
+                stop={!props.animatedUnmatchButton}
 
             >
                 <IonButton onClick={() => playUnmatchButtonAnimation}
@@ -49,7 +56,8 @@ const ActionButtons: React.FC = () => {
                 duration={1000}
                 iterations={1}
                 keyframes={pulseKeyframes}
-
+                play={props.animatedMatchButton}
+                stop={!props.animatedMatchButton    }
             >
                 <IonButton onClick={() => playmatchButtonAnimation}
                     mode='ios' className='match' fill='solid'>
