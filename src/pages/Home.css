@@ -1,0 +1,15 @@
+ion-toolbar {
+    --background: #fefefe;
+    --border-style: none;
+    --outline: none;
+    --min-height: 70px;
+}
+
+ion-toolbar > ion-title {
+    --color: #f19dc6;
+    font-size: 1.3rem;
+}
+
+ion-content {
+    --background: #fefefe;
+}
