@@ -1,0 +1,23 @@
+.action-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-buttons-container ion-button {
+    height: 70px;
+    width: 70px;
+    --border-radius: 35px;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    margin: 10px;
+}
+
+.action-buttons-container ion-button.unmatch {
+    --background: #333;
+    --background-activated: #555;
+    --background-focused: #555;
+}
