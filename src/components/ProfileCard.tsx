@@ -29,11 +29,17 @@ const ProfileCard: React.FC<ContainerProps> = (props) => {
                 onMove: (detail) => {
                     card.style.transform = `translateX(${detail.deltaX}px) rotate(${detail.deltaX / 20
                         }deg)`
+                    if (detail.deltaX > 0) {
+                        props.onMatch()
+                    } else {
+                        props.onUnmatch()
+                    }
                 },
                 onEnd: (detail) => {
                     const windowWidth = window.innerWidth
+                    props.onReset()
                     card.style.transition =
-                        '0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                        '1.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
                     if (detail.deltaX > windowWidth / 2) {
                         card.style.transform = `translateX(${windowWidth * 1.5}px)`
                     } else if (detail.deltaX < -windowWidth / 2) {
